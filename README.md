@@ -116,19 +116,33 @@ Seguido de eso, se crean los div de las secciones que tendran los submenus ya se
   Para nuestros colores, usamos **Adobe colors**, una libreria de colores, la cual puedes explorar una infinita variedad de paletas de colores
 ![image](https://github.com/codifymepro/sictsistema/assets/152323410/f8278eb2-dd47-4ac9-874d-82e066a22817)
 
+## Extra
+  ¿Còmo inspeccionar un elemento en html con ayuda de el navegador?:
+    1-Estando en nuestra pagina, vista o sitio web, en cualqueir parte del sitio damos click derecho y aparecera un menu, vamos a dar click en inspeccionar, tambien usando la tecla F12.
+    <p>
+    <img src="https://github.com/codifymepro/sictsistema/assets/152323410/3ccdadd1-5842-4f73-9882-c9c05f15f51d">
+    </p>
+    Enseguida se nos abrira una ventana llamada Heramientas de desarrollo, la cual nos ayuda para hacer pruebas de depuracion en tiempo real, inspeccionar codigo y editarlo, tanto puro como sus propiedades, tambien la carga de archivos en red y la respuesta que toma para cargar todo el contenido, etc
+<p>
+  <img src="https://github.com/codifymepro/sictsistema/assets/152323410/82ffd553-06d8-439d-8a44-8d63501ab4f2">
+</p>
+
+
+
+# Creditos
+ Este sistema es creado a partir como iniciativa de nuestro servicio social, la cual nos ayuda a tener la experiencia necesaria, la idea de como es trabajar en un entorno laboral de informatica, y saber hacer las cosas bien.
+ Probablemente no sea el mejor programa, pero poco a poco vamos aprendiendo, pues de los errores se aprende.
+
+### Lider del proyecto
+   **Juan Manuel Razura, Director del departamento de informatica SICT**
+### Desarrollado
+  *Sistema desarrollado y diseñado por Carlos Eduardo Hernandez Montes y Jose David Lopez Villarreal*
 
 
 
 
 
-     
 
 
-
-
-
-
-
-  
-   
-    
+> "La inspiracion desbloquea el futuro"
+ Hiyao Miyazaki 2013
