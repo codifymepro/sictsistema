@@ -59,11 +59,76 @@ Usamos como IDE Visual Studio Code 1.84.2
   <img src="https://github.com/codifymepro/sictsistema/assets/152323410/ed30e997-e723-4ee5-b0f5-057f2e61adb7">
   </p> 
   Lo primero que hacemos es validar si el usario es administrador o simplemente es normal, lo cual se hace con una consulta SQL donde selecciona el rol del          usuario con el nombre de la sesion activa.
-  ![image](https://github.com/codifymepro/sictsistema/assets/152323410/1ef46972-1530-4145-8a07-1a40fbcbcdee)
+  <p>
+  <img src="https://github.com/codifymepro/sictsistema/assets/152323410/1ef46972-1530-4145-8a07-1a40fbcbcdee">
+  </p>
 
+  <p>
+  <img src="https://github.com/codifymepro/sictsistema/assets/152323410/247c8f49-782c-47db-a355-6ce0dc250283">
+  </p>
 
 Donde si el usuario es administrador vuelve a hacer otra consulta la cual selecciona en este caso **solo** para los administradores donde el estado del menu sea 1 y submenu sea 1 o 7, existen 7 submenus.
+Seguido de eso, se crean los div de las secciones que tendran los submenus ya sea desde el 1 al 7
+![image](https://github.com/codifymepro/sictsistema/assets/152323410/ad41359b-7382-45f3-bc76-e15aca62b2a0)
+
+4. Como hacer una consulta CRUD
+   - Crear:
+     Lo primero que debemos hacer es la validacion de conexion a la base de datos, despues si el usuario esta logeado.
+     Despues almacenar en variables los elementos del formulario, en este caso los *input* cada input debe tener un nombre, ya que eso vamos a mandarle al archivo donde tiene la funcion/accion de crear algo.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/7ba9bf95-ddba-4419-af28-865c89e2a895)
+    Seguido en unas variables en php *$estaesunavariable*, con el simbolo de $ dinero, estamos invocando que esto es una variable, la cual tendra el valor del metodo POST dependiendo donde estamos trabajando la cual tendra como valor el nombre del input o campo que hemos declarado antes en el formulario, por ejemplo:
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/1d2059d5-ac42-40ec-9a27-9cd94edb6aa0)
+   Ya que hayamos declarado nuestras variables, lo que hacemos es hacer otra variable la cual con esta podremos hacer la consulta SQL y enviar la peticion al servidor, dentro de la variable tendra con comilla doble ("") la query de mysql en este caso insertar.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/2ef60bb8-001c-43c1-a9d9-2e718985c7ee)
+   Una vez hecho esto, enviamos la peticion, llamando con una variable la conexion, y el metodo query de php con el parametro de nuestra variable anterior.
+   En caso de que haya sido correctamente enviada, sera redirigido a la vista donde estaba y se muestran todos los datos, en este caso edificio.
+   De caso contrario, sera redirigido al formulario de insercion de datos.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/a0ec18ba-b37f-4fb4-810a-c30b0d4d4d0e)
+  - Actualizar:
+   Teniendo en cuenta los primeros 2 pasos, podemos seguir el mismo camino, lo unico que cambia es la query SQL, ya que aqui vamos a indicar que va a cambiar y a quien se lo vamos a aplicar.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/1b680318-e9e0-4aab-8042-2dd37ae8e686)
+  - Eliminar: 
+   Aqui teniendo los pasos anteriores, solo que solo vamos a invocar el ID del elemento que vamos a eliminar.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/1a2c11a0-c047-4657-a36c-d42e16bd299c)
+
+   - Leer:
+       Para leer algo, en este caso la informacion que hemos subido, editado o simplemente ver cambios vamos a usar una tabla, y una consulta select simple o usando where para hacer busqueda, siguiendo la sintaxis anterior.
+     ![image](https://github.com/codifymepro/sictsistema/assets/152323410/727c3fb2-d111-44a2-ae31-51773c7208d4)
+     para nuestra busqueda es un poco diferente en la query ya que vamos a usar la clausula **WHERE** y **LIKE** donde vamos a enviarle desde un input un valor que sea o parezca al que existe en la base de datos.
+     Debemos seguir la estructura de un formulario, mismo que debe tener su action, method, y el input su value y name.
+     ![image](https://github.com/codifymepro/sictsistema/assets/152323410/ca75ed90-ee46-45d7-9403-0907ac1ed586)
+     ![image](https://github.com/codifymepro/sictsistema/assets/152323410/2d1f8f35-1be9-4ec9-aee1-ff366c102353)
+     en caso de que exista el elemento buscado vamos a mostrarlo en una tabla html.
+     Con un while en php llamamos a la variable que asignamos anteriormente $row donde row va a mostrar por cada elemento una columna y dato ordenadamente.
+     ![image](https://github.com/codifymepro/sictsistema/assets/152323410/63e47009-703e-4ed0-9a3b-16fe2b268557)
+     dentro del cuerpo de la tabla, con las etiquetas tr, th, mostramos lo que es el cuerpo de nuestra tabla
+     ![image](https://github.com/codifymepro/sictsistema/assets/152323410/ab425a21-33f8-4d14-9261-bf0a5bbcf5c4)
+     Donde en **td** va a incluir un echo en php la variable $row junto el nombre de la columna en la tabla de mysql de nuestra base de datos.
+
+5. Frameworks que usamos
+   Como estilos usamos **Bootstrap 5.0.2**, es una libreria de estilos ya predefinidos, al menos el 85% del codigo html.
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/fedc9f4b-4328-4f96-a63f-4ec4b13bbc08)
+
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/fffca85f-eb10-4222-9a03-af19c002f057)
+   Para las fuentes de texto usamos **Google Fonts**, una libreria igual cientas de fuentes, la fuente que escogimos fue Montserrat
+   ![image](https://github.com/codifymepro/sictsistema/assets/152323410/a3da9750-8246-40f7-838a-e376b24dc900)
+![image](https://github.com/codifymepro/sictsistema/assets/152323410/abbc321d-a83d-4b81-8dee-a58526020ce3)
+  Para nuestros colores, usamos **Adobe colors**, una libreria de colores, la cual puedes explorar una infinita variedad de paletas de colores
+![image](https://github.com/codifymepro/sictsistema/assets/152323410/f8278eb2-dd47-4ac9-874d-82e066a22817)
 
 
+
+
+
+
+     
+
+
+
+
+
+
+
+  
    
     
